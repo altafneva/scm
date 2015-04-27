@@ -126,8 +126,8 @@
 <body>
 	<?php
 		include("../includes/header.inc.php");
-		include("../includes/nav_manufacturer.inc.php");
-		include("../includes/aside_manufacturer.inc.php");
+		include("../includes/nav_admin.inc.php");
+		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
 		<h1>Orders</h1>

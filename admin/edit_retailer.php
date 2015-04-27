@@ -24,15 +24,6 @@
 						$usernameErr = $resultValidate_username;
 					}
 				}
-				if(!empty($_POST['txtRetailerPassword'])) {
-					$resultValidate_username = validate_password($_POST['txtRetailerPassword']);
-					if($resultValidate_username == 1) {
-						$password = $_POST['txtRetailerPassword'];
-					}
-					else {
-						$passwordErr = $resultValidate_username;
-					}
-				}
 				if(!empty($_POST['cmbAreaCode'])) {
 					$areacode = $_POST['cmbAreaCode'];
 				}
@@ -60,8 +51,8 @@
 					$address = $_POST['txtRetailerAddress'];
 					$addressHolder = $_POST['txtRetailerAddress'];
 				}
-				if($username != null && $password != null && $areacode != null && $phone != null) {
-					$query_UpdateRetailer = "UPDATE retailer SET username='$username',password='$password',address='$address',area_id='$areacode',phone='$phone',email='$email' WHERE retailer_id='$id'";
+				if($username != null && $areacode != null && $phone != null) {
+					$query_UpdateRetailer = "UPDATE retailer SET username='$username',address='$address',area_id='$areacode',phone='$phone',email='$email' WHERE retailer_id='$id'";
 					if(mysqli_query($con,$query_UpdateRetailer)) {
 						echo "<script> alert(\"Retailer Updated Successfully\"); </script>";
 						header('Refresh:0;url=view_retailer.php');
@@ -102,10 +93,6 @@
 		<li>
 			<div class="label-block"> <label for="retailer:username">Username</label> </div>
 			<div class="input-box"> <input type="text" id="retailer:username" name="txtRetailerUname" placeholder="Username" value="<?php echo $row_selectRetailerDetails['username']; ?>" required /> </div> <span class="error_message"><?php echo $usernameErr; ?></span>
-		</li>
-		<li>
-			<div class="label-block"> <label for="retailer:password">Password</label> </div>
-			<div class="input-box"> <input type="text" id="retailer:password" name="txtRetailerPassword" placeholder="Password" value="<?php echo $row_selectRetailerDetails['password']; ?>" required /> </div> <span class="error_message"><?php echo $passwordErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="retailer:areaCode">Area Code</label> </div>

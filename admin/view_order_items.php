@@ -1,7 +1,7 @@
 <?php
 	require("../includes/config.php");
 	session_start();
-	if(isset($_SESSION['manufacturer_login']) || isset($_SESSION['admin_login']) || isset($_SESSION['retailer_login'])) {
+	if(isset($_SESSION['admin_login'])) {
 			$order_id = $_GET['id'];
 			$query_selectManOrderItems = "SELECT *,order_items.quantity as quantity FROM orders,order_items,products WHERE order_items.order_id='$order_id' AND order_items.pro_id=products.pro_id AND order_items.order_id=orders.order_id";
 			$result_selectManOrderItems = mysqli_query($con,$query_selectManOrderItems);
@@ -23,8 +23,8 @@
 <body>
 	<?php
 		include("../includes/header.inc.php");
-		include("../includes/nav_manufacturer.inc.php");
-		include("../includes/aside_manufacturer.inc.php");
+		include("../includes/nav_admin.inc.php");
+		include("../includes/aside_admin.inc.php");
 	?>
 	<section>
 		<h1>Order Details</h1>
@@ -78,23 +78,6 @@
 				</td>
 			</tr>
 		</table>
-			
-			<?php
-				if($row_selectManOrder['approved'] == 0) {
-					?>
-				<a href="confirm_order.php?id=<?php echo $order_id; ?>"><input type="button" value="Confirm Order" class="submit_button"/></a>
-				<?php
-				}
-				else {
-					if($row_selectManOrder['status'] == 0) {
-				?>
-					<a href="generate_invoice.php?id=<?php echo $order_id; ?>"><input type="button" value="Generate Invoice" class="submit_button"/></a>
-				<?php
-					}
-					else {
-					}
-				}
-				?>
 		</form>
 	</section>
 	<?php

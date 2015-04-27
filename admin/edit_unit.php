@@ -7,7 +7,7 @@
 			$id = $_GET['id'];
 			$query_selectUnitDetails = "SELECT * FROM unit WHERE id='$id'";
 			$result_selectUnitDetails = mysqli_query($con,$query_selectUnitDetails);
-			$row_selectselectUnitDetails = mysqli_fetch_array($result_selectUnitDetails);
+			$row_selectUnitDetails = mysqli_fetch_array($result_selectUnitDetails);
 			$unitName = $unitDetails = "";
 			$unitNameErr = $requireErr = $confirmMessage = "";
 			$unitNameHolder = $unitDetailsHolder = "";
@@ -67,11 +67,11 @@
 		<ul class="form-list">
 		<li>
 			<div class="label-block"> <label for="unitName">Unit Name</label> </div>
-			<div class="input-box"> <input type="text" id="unitName" name="txtUnitName" placeholder="Unit Name" value="<?php echo $row_selectselectUnitDetails['unit_name']; ?>" required /> </div> <span class="error_message"><?php echo $unitNameErr; ?></span>
+			<div class="input-box"> <input type="text" id="unitName" name="txtUnitName" placeholder="Unit Name" value="<?php echo $row_selectUnitDetails['unit_name']; ?>" required /> </div> <span class="error_message"><?php echo $unitNameErr; ?></span>
 		</li>
 		<li>
 			<div class="label-block"> <label for="unitDetails">Details</label> </div>
-			<div class="input-box"><textarea id="unitDetails" name="txtunitDetails" placeholder="Details"><?php echo $row_selectselectUnitDetails['description']; ?></textarea> </div>
+			<div class="input-box"><textarea id="unitDetails" name="txtunitDetails" placeholder="Details"><?php echo $row_selectUnitDetails['unit_details']; ?></textarea> </div>
 		</li>
 		<li>
 			<input type="submit" value="Update Unit" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>

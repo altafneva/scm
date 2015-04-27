@@ -62,7 +62,6 @@
 				<th>Email</th>
 				<th>Phone</th>
 				<th>Username</th>
-				<th>Password</th>
 				<th> Edit </th>
 			</tr>
 			<?php $i=1; while($row_selectManufacturer = mysqli_fetch_array($result_selectManufacturer)) { ?>
@@ -73,7 +72,6 @@
 				<td> <?php echo $row_selectManufacturer['man_email']; ?> </td>
 				<td> <?php echo $row_selectManufacturer['man_phone']; ?> </td>
 				<td> <?php echo $row_selectManufacturer['username']; ?> </td>
-				<td> <?php echo $row_selectManufacturer['password']; ?> </td>
 				<td> <a href="edit_manufacturer.php?id=<?php echo $row_selectManufacturer['man_id']; ?>"><img src="../images/edit.png" alt="edit" /></a> </td>
 			</tr>
 			<?php $i++; } ?>

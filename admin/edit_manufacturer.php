@@ -52,17 +52,8 @@
 						$usernameErr = $resultValidate_username;
 					}
 				}
-				if(!empty($_POST['txtManufacturerPassword'])) {
-					$resultValidate_password = validate_password($_POST['txtManufacturerPassword']);
-					if($resultValidate_password == 1) {
-						$password = $_POST['txtManufacturerPassword'];
-					}
-					else {
-						$passwordErr = $resultValidate_password;
-					}
-				}
-				if($name != null && $email != null && $username != null && $password != null) {
-					$query_UpdateMan = "UPDATE manufacturer SET man_name='$name',man_email='$email',man_phone='$phone',username='$username',password='$password' WHERE man_id='$id'";
+				if($name != null && $email != null && $username != null) {
+					$query_UpdateMan = "UPDATE manufacturer SET man_name='$name',man_email='$email',man_phone='$phone',username='$username' WHERE man_id='$id'";
 					if(mysqli_query($con,$query_UpdateMan)) {
 						echo "<script> alert(\"Manufacturer Details Updated Successfully\"); </script>";
 						header('Refresh:0;url=view_manufacturer.php');
@@ -115,10 +106,6 @@
 		<li>
 			<div class="label-block"> <label for="manufacturer:username">Username</label> </div>
 			<div class="input-box"> <input type="text" id="manufacturer:username" name="txtManufacturerUname" placeholder="Username" value="<?php echo $row_selectManDetails['username']; ?>" required /> </div> <span class="error_message"><?php echo $usernameErr; ?></span>
-		</li>
-		<li>
-			<div class="label-block"> <label for="manufacturer:password">Password</label> </div>
-			<div class="input-box"> <input type="text" id="manufacturer:password" name="txtManufacturerPassword" placeholder="Password" value="<?php echo $row_selectManDetails['password']; ?>" required /> </div> <span class="error_message"><?php echo $passwordErr; ?></span>
 		</li>
 		<li>
 			<input type="submit" value="Update Manufacturer" class="submit_button" /> <span class="error_message"> <?php echo $requireErr; ?> </span><span class="confirm_message"> <?php echo $confirmMessage; ?> </span>

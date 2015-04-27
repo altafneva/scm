@@ -8,7 +8,7 @@
 	--><a href="../admin/add_manufacturer.php">Add Manufacturer</a><!--
 	--><a href="../admin/view_unit.php">Manage Unit</a><!--
 	--><a href="../admin/view_category.php">Manage Category</a><!--
---><a href="../admin/view_area.php">Manage Area</a><!--
+	--><a href="../admin/view_area.php">Manage Area</a><!--
 	--><a href="../admin/change_password.php">Change Password</a>
 </aside>
 

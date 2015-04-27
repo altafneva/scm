@@ -1,7 +1,7 @@
 <?php
 	include("../includes/config.php");
 	session_start();
-	if(isset($_SESSION['admin_login']) || isset($_SESSION['retailer_login']) || isset($_SESSION['manufacturer_login'])) {
+	if(isset($_SESSION['admin_login'])) {
 			$query_selectProducts = "SELECT * FROM products,categories,unit WHERE products.pro_cat=categories.cat_id AND products.unit=unit.id ORDER BY pro_id";
 			$result_selectProducts = mysqli_query($con,$query_selectProducts);
 			if($_SERVER['REQUEST_METHOD'] == "POST") {
