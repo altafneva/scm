@@ -49,7 +49,7 @@
 				<td> <input type="text" size="10" id="txtFinalAmount" name="total_price" readonly="readonly" value="" /> </td>
 			</tr>
 		</table>
-		<input id="btnSubmit" type="submit" value="Order" class="submit_button" />
+		<input id="btnSubmit" type="submit" value="Post Order" class="submit_button" />
 		</form>
 	</section>
 	<?php

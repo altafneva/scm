@@ -70,7 +70,7 @@
 						}
 					}
 					else if(!empty($_POST['cmbApproved'])) {
-						if($_POST['cmbStatus'] == "zero") {
+						if($_POST['cmbApproved'] == "zero") {
 							$approved = 0;
 						}
 						else {

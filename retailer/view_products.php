@@ -1,35 +1,13 @@
 <?php
 	include("../includes/config.php");
 	session_start();
-	if(isset($_SESSION['admin_login']) || isset($_SESSION['retailer_login']) || isset($_SESSION['manufacturer_login'])) {
-		//if($_SESSION['admin_login'] == true || $_SESSION['retailer_login'] == true || $_SESSION['manufacturer_login'] == true) {
+	if(isset($_SESSION['retailer_login'])) {
 			$query_selectProducts = "SELECT * FROM products,categories,unit WHERE products.pro_cat=categories.cat_id AND products.unit=unit.id ORDER BY pro_id";
 			$result_selectProducts = mysqli_query($con,$query_selectProducts);
-			if($_SERVER['REQUEST_METHOD'] == "POST") {
-				if(isset($_POST['chkId'])) {
-					$chkId = $_POST['chkId'];
-					foreach($chkId as $id) {
-						$query_deleteProduct = "DELETE FROM products WHERE pro_id='$id'";
-						$result = mysqli_query($con,$query_deleteProduct);
-					}
-					if(!$result) {
-						echo "<script> alert(\"There was some problems deleting products\"); </script>";
-						header('Refresh:0');
-					}
-					else {
-						echo "<script> alert(\"Products Deleted Successfully\"); </script>";
-						header('Refresh:0');
-					}
-				}
-			}
 		}
 		else {
 			header('Location:../index.php');
 		}
-	//}
-//	else {
-//		header('Location:../index.php');
-//	}
 ?>
 <!DOCTYPE html>
 <html>

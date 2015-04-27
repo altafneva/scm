@@ -3,8 +3,8 @@
 <td id="td_aside">
 
 <aside>
-	<a href="../retailer/edit_profile.php">Edit Profile</a><!--
-	--><a href="../retailer/order_items.php">New Order</a>
+	<a href="../retailer/order_items.php">New Order</a><!--
+	--><a href="../retailer/edit_profile.php">Edit Profile</a>
 </aside>
 
 </td>
