@@ -6,6 +6,7 @@
 	<a href="../admin/add_product.php">Add Products</a><!--
 	--><a href="../admin/add_retailer.php">Add Retailers</a><!--
 	--><a href="../admin/add_manufacturer.php">Add Manufacturer</a><!--
+	--><a href="../admin/add_distributor.php">Add Distributor</a><!--
 	--><a href="../admin/view_unit.php">Manage Unit</a><!--
 	--><a href="../admin/view_category.php">Manage Category</a><!--
 	--><a href="../admin/view_area.php">Manage Area</a><!--
