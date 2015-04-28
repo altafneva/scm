@@ -38,7 +38,8 @@
 				if($result == 1) {
 					$queryUpdateStatus = "UPDATE orders SET status=1 WHERE order_id='$order_id'";
 					if(mysqli_query($con,$queryUpdateStatus)) {
-						echo "Invoice Generated Successfully.";
+						echo "<script> alert(\"Invoice Generated Successfully\"); </script>";
+						header("Refresh:0;url=view_invoice_items.php?id=$invoice_id");
 					}
 					else {
 						echo "Can not update the status of order.";

@@ -42,7 +42,6 @@
 		include("../includes/aside_retailer.inc.php");
 	?>
 	<section>
-	<div id="divToPrint" style="clear:both;" >
 		<h1 style="text-align:center;">Sales Invoice</h1>
 		<table class="table_infoFormat">
 		<tr>
@@ -96,11 +95,6 @@
 			</tr>
 		</table><br/><br/>
 		<b>Comments:</b> <br/> <?php echo $rowSelectInvoice['comments']; ?>
-		<br/><br/><br/><br/><br/><br/>
-			<p id="signature" style="float:right;display:none;">(Authorized Signatory)</p>
-			<p id="footer" style="clear:both;display:none;padding-bottom:20px;text-align:center;">Thank you for your Bussiness!</p>
-		</div>
-		<input type="button" value="Print Invoice" class="submit_button" onclick="PrintDiv();" />
 		</form>
 	</section>
 	<?php
