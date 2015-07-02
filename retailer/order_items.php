@@ -40,8 +40,8 @@
 				<td> <?php echo $row_selectProducts['pro_name']; ?> </td>
 				<td> <?php echo $row_selectProducts['pro_price']; ?> </td>
 				<td> <?php if($row_selectProducts['quantity'] == NULL){ echo "N/A";} else {echo $row_selectProducts['quantity'];} ?> </td>
-				<td> <input type="text" class="quantity" id="<?php echo $i; ?>" name="<?php echo "txtQuantity".$i; ?>" /> </td>
-				<td> <div id="<?php echo "totalPrice".$i; ?>"></div> </td>
+				<td> <input type="text" class="quantity" id="<?php echo $row_selectProducts['pro_id']; ?>" name="<?php echo "txtQuantity".$row_selectProducts['pro_id']; ?>" /> </td>
+				<td> <div id="<?php echo "totalPrice".$row_selectProducts['pro_id']; ?>"></div> </td>
 			</tr>
 			<?php $i++; } ?>
 			<tr>
